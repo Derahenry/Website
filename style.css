@@ -20,3 +20,12 @@ nav {
     grid-area: nav;
 
 }
+main {
+    grid-area: main;
+    padding: 15px;
+}
+
+footer {
+    grid-area: footer;
+    padding: 15px;
+}
