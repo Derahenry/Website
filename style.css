@@ -1,3 +1,17 @@
+:root {
+    /* Primary Colors */
+    --primary-green: #05681a;
+    --primary-dark-green: #012509;
+    --primary-black: #000000;
+    
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-hover: #012509;
+    
+    /* Background Colors */
+    --bg-color: #000000;
+}
+
 body {
     display: grid;
 
@@ -8,6 +22,8 @@ body {
         "header header header"
         "main main main"
         "footer footer footer";
+        background: var(--bg-color);
+    color: var(--text-primary);
 
 }
 
@@ -54,7 +70,7 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     /* Removes underline from links */
-    color: black;
+    color:  var(--primary-green);
     /* Sets link color */
     font-size: 1.1em;
     font-family: "Signika Negative", sans-serif;
@@ -70,5 +86,43 @@ nav ul li a {
     font-weight: 400;
     font-style: normal;
     text-align: right;
+    color: #05681a;
     
+}
+
+ul li a:hover {
+    color: #012509;
+    /* Changes link color on hover */
+}
+
+header{
+   
+    text-align: center;
+    font-family: "Signika Negative", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+span{
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #05681a;
+}
+h4 {
+    font-family: "Signika Negative", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.3em;
+    
+}
+a.icon {
+    text-decoration: none;
+    color: var(--primary-green);
+    font-size: 2em;
+    display: inline-block;
+    padding: 1em;
+}
+a.icon:hover {
+    color: var(--text-primary);
 }
