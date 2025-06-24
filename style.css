@@ -1,6 +1,6 @@
 :root {
     /* Primary Colors */
-    --primary-green: #05681a;
+    --primary-green: rgb(5, 104, 26);
     --primary-dark-green: #012509;
     --primary-black: #000000;
     
@@ -22,7 +22,7 @@ body {
         "header header header"
         "main main main"
         "footer footer footer";
-        background: var(--bg-color);
+    background: var(--bg-color);
     color: var(--text-primary);
 
 }
@@ -191,6 +191,7 @@ header h1 {
     gap: 10px;
     font-size: 2.5em;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 #about {
@@ -206,10 +207,283 @@ header h1 {
     line-height: 1.5;
     margin: 20px 0;
 }
+.profile-picture-container {
+    perspective: 1000px;
+    width: 200px;  /* Adjust based on your image size */
+    height: 200px; /* Adjust based on your image size */
+    margin: 0 auto;
+    margin-bottom: 5em;
+    cursor: pointer;
+}
+
+.profile-picture-flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.profile-picture-container:hover .profile-picture-flipper {
+    transform: rotateY(180deg);
+}
+
+.profile-picture-front,
+.profile-picture-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.profile-picture-back {
+    transform: rotateY(180deg);
+}
+
 .profile-picture {
-    width: 10cm;
+    width: 6.5cm;
     height: auto;
-    border-radius: 50%;
-    margin-bottom: 20px;
-    box-shadow: 0 10px 8px var(--primary-dark-green)
+    object-fit: cover;
+    border-radius: 50%;  /* Keep if you want circular images */
+    box-shadow: #05681a 0px 7px 10px;
+    
+}
+#about h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+    font-family:"Signika Negative", sans-serif ;
+
+}
+#about p {
+    font-size: 1.2em;
+    color: var(--text-primary);
+    font-family: "Signika Negative", sans-serif;
+}
+#skills h2 {
+    
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+    font-family:"Signika Negative", sans-serif ;
+}
+#skills ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+#skills li {
+    margin: 0 10px;
+    padding: 15px 25px;
+    background-color: var(--primary-dark-green);
+    color: var(--text-primary);
+    border-radius: 15px;
+    font-family: "Signika Negative", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+}
+
+#skills li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-green), var(--primary-dark-green));
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+#skills li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(5, 104, 26, 0.3);
+}
+
+#skills li:hover::before {
+    opacity: 1;
+}
+
+#projects h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+    font-family:"Signika Negative", sans-serif ;
+}
+
+#projects ul {
+    list-style: none;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+#projects li {
+    margin: 10px;
+    padding: 25px;
+    background-color: var(--primary-dark-green);
+    color: var(--text-primary);
+    border-radius: 15px;
+    font-family: "Signika Negative", sans-serif;
+    width: 300px;
+    min-height: 200px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#projects li::after {
+    font-family: "Font Awesome 6 Free";
+    content: '\f023';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    color: var(--text-primary);
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-weight: 900;
+    z-index: 2;
+}
+
+#projects li:hover::after {
+    opacity: 1;
+}
+
+#projects li * {
+    position: relative;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+#projects li:hover * {
+    opacity: 0.3;
+}
+
+#projects li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-green), var(--primary-dark-green));
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.3s ease;
+}
+
+#projects li:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(5, 104, 26, 0.2);
+}
+
+#projects li:hover::before {
+    opacity: 1;
+}
+
+#projects li * {
+    position: relative;
+    z-index: 1;
+}
+body.contact{
+    background-color: var();
+    margin-left: 35em;
+    margin-top: 10em;
+    
+    
+
+}
+
+
+.inp-container{
+    border: 2px solid var(--primary-dark-green);
+    background: transparent;
+    border-radius: 15px;
+    height: 12cm;
+    width: 10cm;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    margin-left: 5cm;
+}
+input{
+    padding: 10px;
+    border: 2px solid var(--primary-dark-green);
+    border-radius: 5px;
+    background-color: var(--primary-black);
+    color: var(--text-primary);
+    font-family: "Signika Negative", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
+input:focus, textarea:focus{
+    outline: none;
+    border-color: var(--primary-green);
+    font-size: 0.90em;
+}
+
+.cont-text{
+    font-family: "Signika Negative", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--text-primary);
+    font-size: 1.2em;
+    text-align: center;
+}
+textarea{
+    padding: 10px;
+    border: 2px solid var(--primary-dark-green);
+    border-radius: 5px;
+    background-color: var(--primary-black);
+    color: var(--text-primary);
+    font-family: "Signika Negative", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    width: 9.5cm;
+    border-left: none;
+    border-right: none;
+    border-top: none;  
+}
+.cont-btn{
+    background-color: var(--primary-green);
+    color: var(--text-primary);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Signika Negative", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2em;
+    width: 3cm;
+    margin-left: 3.3cm;
+    margin-top: 1cm;
 }
