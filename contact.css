@@ -1,0 +1,217 @@
+:root {
+    /* Primary Colors */
+    --primary-green: rgb(5, 104, 26);
+    --primary-dark-green: #012509;
+    --primary-black: #000000;
+    
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-hover: #012509;
+    
+    /* Background Colors */
+    --bg-color: #000000;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "nav nav nav"
+        "header header header"
+        "main main main"
+        "footer footer footer";
+    background: var(--bg-color);
+    color: var(--text-primary);
+
+}
+header {
+    padding: 15px;
+    grid-area: header;
+    text-align: center;
+    font-family: "Signika Negative", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 3em;
+}
+
+nav {
+    grid-area: nav;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+main {
+    grid-area: main;
+    padding: 15px;
+}
+
+footer {
+    grid-area: footer;
+    padding: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    justify-content: center;
+}
+
+nav ul li {
+    padding: 5px;
+    display: inline-block;
+    /* Makes list items display inline */
+}
+
+nav ul li a {
+    text-decoration: none;
+    /* Removes underline from links */
+    color:  var(--primary-green);
+    /* Sets link color */
+    font-size: 1.1em;
+    font-family: "Signika Negative", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    position: relative;  /* Add this for absolute positioning of pseudo-element */
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--text-primary);
+    transition: width 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+#icon {
+    margin: 0;
+    padding-left: 20px;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: right;
+    color: #05681a;
+    
+}
+
+ul li a:hover {
+    color: var(--text-primary);
+    /* Changes link color on hover */
+}
+
+
+.contact-container {
+    border: 2px solid var(--primary-green);
+    height: 70vh;
+    padding: 10px;
+    width: 25%;
+    border-radius: 15px;
+    justify-items: center;
+    align-items: center;
+    background: linear-gradient(162deg,#212020,#024802);background-size: 120% 120%;
+    animation: gradient-animation 16s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+}
+h3.cont-text {
+    color: var(--primary-black);
+    font-family: "Signika Negative", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+input{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid var(--primary-green);
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    background-color: none;
+    margin-bottom: 30px;
+    color: var(--primary-black);
+    font-size: 16px;
+    font-family: "Signika Negative", sans-serif;
+}
+input:focus {
+    outline: none;
+    border-color: var(--primary-green);
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    border-radius: 5px;
+    border: 1px solid var(--primary-green);
+    font-size: 16px;
+    font-family: "Signika Negative", sans-serif;
+    background-color: none;
+    margin-bottom: 10px;
+}
+   .cont-btn {
+    width: 25%;
+    height: 40px;
+    background-color: var(--primary-green);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-family: "Signika Negative", sans-serif;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0 auto;
+}
